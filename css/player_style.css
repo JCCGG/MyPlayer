@@ -1,0 +1,405 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+
+/* 字体图标 */
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/iconfont.woff2') format('woff2'),
+        url('../font/iconfont.woff') format('woff'),
+        url('../font/iconfont.ttf') format('truetype'),
+        url('../font/iconfont.svg#iconfont') format('svg');
+  }
+
+
+
+/* 播放器开始 */
+
+.myPlayer{
+    /* width:350px;
+    height:80px; */
+    position:fixed;
+    left: 0px;
+    bottom:50px;
+    
+    
+}
+
+
+.player-pic{
+    
+    float: left;
+    
+}
+
+/* 点击播放 */
+.player-Btn{
+    position: relative;
+    width:80px;
+    height:80px;
+    background-color:rgb(72, 196, 0);
+    font-family: "iconfont";
+    overflow: hidden;
+}
+
+.player-Btn::before{
+    content:"\e75d";
+    
+    font-size:48px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    line-height: 60px;
+    width:60px;
+    height:60px;
+    color:#88e651;
+    cursor:pointer;
+}
+
+.player-Btn::after{
+    content:"\e768";
+    
+    font-size:48px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    line-height: 60px;
+    width:60px;
+    height:60px;
+    display: none;
+    color:#88e651;
+    cursor:pointer;
+}
+
+
+
+
+/* 控制部分 */
+
+.player-body{
+    float: left;
+    width:320px;
+    height:80px;
+    box-sizing: border-box;
+    border:1px solid rgb(72, 196, 0);
+    border-right:none;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    box-shadow:2px 2px 12px -5px #7d7d7d;
+}
+
+
+/* 上半部分 */
+
+.control-top{
+    width:100%;
+    height:50px;
+    /* border:1px solid rgb(231, 0, 0); */
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.music-text{
+    width:250px;
+    height:100%;
+    /* border:1px solid rgb(0, 92, 231); */
+    float: left;
+    overflow: hidden;
+    color:rgb(163, 163, 163);
+    padding:5px 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* 歌名 */
+
+#music-name{
+    float: left;
+}
+#music-auchor{
+   
+}
+
+
+/* 歌手 */
+
+
+/* 时间轴 */
+.control-bottom{
+    width: 100%;
+    height:30px;
+    /* border:1px solid blue; */
+    position: absolute;
+    bottom: 0px;
+    float: left;
+    padding-left:10px;
+    box-sizing:border-box;
+    
+}
+
+.time-bar{
+    width:160px;
+    height:5px;
+    position: absolute;
+    bottom:5px;
+    margin:5px;
+    margin-left: 0px;
+    background-color:  rgb(226, 226, 226);
+    box-sizing: border-box;
+    border-radius:2px;
+    cursor: pointer;
+}
+
+.time-bar-current{
+    width: 0%;
+    height:100%;
+    border-radius:2px;
+    background-color:  rgb(72, 196, 0);
+   
+}
+
+
+
+/* 时间 */
+.time-text{
+    font-size: 10px;;
+    color:rgb(179, 179, 179);
+    position:absolute;
+    left:180px;
+    bottom:5px;
+    overflow: hidden;
+}
+
+.controls-btn{
+    font-family: "iconfont";
+    font-size: 16px;;
+    color:rgb(179, 179, 179);
+    
+    float:right;
+    margin-top: 3px;
+    margin-right: 3px;
+    
+}
+
+/* 下一首、上一首、音量 */
+.back,.next,.vol-icon{
+    display: inline-block;
+    cursor:pointer;
+}
+
+.back:hover,.next:hover,.vol-icon:hover{
+    color:rgb(122, 122, 122);
+}
+
+/* 音量 */
+
+
+
+.vol-icon{
+    width:20px;
+    height:20px;
+    font-family:"iconfont";
+    font-size: 18px;
+    position: relative;
+    bottom:-4px;
+    right:0px;
+    display: inline-block;
+    
+    
+}
+
+.vol-bar{
+    width: 5px;
+    height: 45px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 20px;
+    right: 11px;
+    transform: rotate(180deg);
+    display: none;
+    
+}
+
+.vol-bar:hover{
+    cursor: pointer;
+}
+
+.vol-current{
+    width:100%;
+    background-color:  rgb(36, 218, 0);
+    border-radius:2px;
+    
+}
+
+.vol-icon::before{
+    content:"\e767";
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+
+}
+.vol-icon::after{
+    content:"\e766";
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    color:red;
+}
+
+/* 弹出按钮 */
+
+#pop-btn{
+    width:20px;
+    height:80px;
+    background-color:rgb(72, 196, 0);
+    float:left;
+    text-align: center;
+    color:rgb(181, 235, 149);
+    border-left:1px solid rgb(133, 228, 78);
+    line-height: 80px;
+    font-family: "iconfont";
+}
+
+#pop-btn:hover{
+    cursor:pointer;
+}
+
+
+/* 播放器结束 */
+
+
+
+
+
+/* 主页设置 */
+
+.serch{
+    
+    height:120px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top:20%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    box-shadow: 4px 4px 11px #072d0c;
+}
+.serch a{
+    text-decoration: none;
+    color:#3e8f10;
+   
+}
+
+
+/* 音乐歌单 */
+
+.list_container::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+} 
+.list_container::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+.list_container::-webkit-scrollbar-thumb {
+    background: #0ecc0e;
+    border-radius: 10px;
+}
+
+
+.list_container{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    bottom: 79px;
+    z-index: -999;
+    border: 1px solid rgb(36, 218, 0);
+    background:rgba(255, 255, 255, 0.822);
+    border-top-right-radius: 4px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-top: 5px;
+    display: none;
+    /* box-shadow: 4px -2px 10px -5px #ccc; */
+
+}
+
+.music_item{
+    box-sizing: border-box;
+    height: 35px;
+    width:100%;
+    border-bottom:1px solid rgba(130, 240, 109, 0.61);
+    border-left: none;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.music_item:hover{
+    background: rgba(218, 255, 227, 0.849);
+}
+
+.music_item>span{
+    color:rgb(184, 184, 184);
+}
+
+.music_item>span:first-of-type{
+    
+    float: left; 
+    margin-right:8px;
+}
+
+.music_item>span:nth-of-type(2){
+    
+    color: #25b444;
+    overflow: hidden;
+    float: left;
+    
+    text-overflow: ellipsis; 
+    white-space:nowrap;
+    width:200px;
+    /* height:24px; */
+    display:block;
+}
+
+.music_item>span:last-of-type{
+    color: #25b444;
+    float: right;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 130px;
+    text-align: right;
+}
+
+.show_list{
+    font-family: 'iconfont';
+    width: 25px;
+    height:25px;
+    font-size: 24px;
+    /* border: 1px solid saddlebrown; */
+    float: right;
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+    margin-right:3px;
+}
+
+.list_active{
+    background: rgba(218, 255, 227, 0.849);
+}
